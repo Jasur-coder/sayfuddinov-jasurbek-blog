@@ -2,11 +2,9 @@ import { Banner } from "../component";
 
 const Home = () => {
   return (
-    <section className="bg-gray-900 px-4 py-20">
+    <section className="bg-gray-900 ">
       <div className="container">
-        <div className="w-full flex items-center">
-          <Banner />
-        </div>
+        <Banner/>
       </div>
     </section>
   );
