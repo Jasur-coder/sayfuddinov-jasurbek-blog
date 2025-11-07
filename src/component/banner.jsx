@@ -10,14 +10,14 @@ const Banner = () => {
 					</h2>
 					<p class='text-slate-400 mb-7 text-4xl'>Software Engineer</p>
 
-				<div className='flex justify-start space-x-4 '>
+				<div className='flex justify-start space-x-4'>
 					{bannerLinks.map(el => (
 						<a key={el.id} href={el.to} target='_blank'>
 							<img width={30} height={30} src={el.icon} alt='' />
 						</a>
 					))}
 				</div>
-				<p class=' text-slate-300 mb-8'>
+				<p class='text-slate-300 '>
 					I create modern and responsive websites using HTML, CSS, JavaScript,
 					and React. Open to exciting projects and new challenges!
 				</p>
