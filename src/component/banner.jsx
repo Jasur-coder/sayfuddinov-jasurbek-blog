@@ -3,7 +3,7 @@ import { bannerLinks } from "../data";
 
 const Banner = () => {
   return (
-		<div className='flex justify-between items-center h-dvh'>
+		<div className='flex justify-between items-center pt-[500px]'>
 			<div className=''>
 					<h2 class='text-5xl font-bold mb-4 text-slate-50'>
 						Sayfuddinov Jasurbek Blog
@@ -17,20 +17,20 @@ const Banner = () => {
 						</a>
 					))}
 				</div>
-				<p class='text-slate-300 '>
+				<p class='text-slate-300 mt-6 mb-6 w-[600px]'>
 					I create modern and responsive websites using HTML, CSS, JavaScript,
 					and React. Open to exciting projects and new challenges!
 				</p>
 
-				<div className='flex items-center gap-6'>
+				<div className='flex items-center gap-10'>
 					<Link
-						className='bg-blue-600 hover:bg-blue-700 transition px-6 py-2 rounded-lg font-medium shadow-md text-[#fff]'
+						className='bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-lg font-medium shadow-md text-[#fff]'
 						to={'/articles'}
 					>
 						Read blog
 					</Link>
 					<Link
-						className='bg-slate-700 hover:bg-slate-600 transition px-6 py-2 rounded-lg font-medium shadow-md text-[#fff]'
+						className='bg-slate-700 hover:bg-slate-600 transition px-8 py-4 rounded-lg font-medium shadow-md text-[#fff]'
 						to={'/contact'}
 					>
 						About me
@@ -40,7 +40,7 @@ const Banner = () => {
 			<img
 				src='your-photo.jpg'
 				alt='Jasurbek'
-				class='w-36 h-36 rounded-full object-cover mb-7 ring-4 ring-blue-600 shadow-lg m-auto'
+				class='w-80 h-80 rounded-full object-cover mb-7 ring-4 ring-blue-600 shadow-lg'
 			/>
 		</div>
 	)
