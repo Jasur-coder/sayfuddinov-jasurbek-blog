@@ -3,8 +3,8 @@ import { bannerLinks } from "../data";
 
 const Banner = () => {
   return (
-		<div className='flex justify-between items-center pt-[500px]'>
-			<div className=''>
+		<div className='flex justify-between items-center pt-[400px]'>
+			<div>
 					<h2 class='text-5xl font-bold mb-4 text-slate-50'>
 						Sayfuddinov Jasurbek Blog
 					</h2>
@@ -40,7 +40,7 @@ const Banner = () => {
 			<img
 				src='your-photo.jpg'
 				alt='Jasurbek'
-				class='w-80 h-80 rounded-full object-cover mb-7 ring-4 ring-blue-600 shadow-lg'
+				class='w-80 h-80 rounded-full object-cover ring-4 ring-blue-600 shadow-lg'
 			/>
 		</div>
 	)

@@ -12,3 +12,17 @@
     border: none;
     outline: none;
 }
+
+.grid { 
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
