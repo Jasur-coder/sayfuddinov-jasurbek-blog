@@ -72,67 +72,76 @@ const ContactForm = () => {
   const phoneValue = watch("phone");
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-5 bg-gray-50 p-5 rounded-lg"
-    >
-      {/* Name */}
-      <label htmlFor="name" className="text-2xl font-normal">
-        Ism
-      </label>
-      <input
-        id="name"
-        placeholder="Ismingizni kiriting"
-        className="p-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-        {...register("firstName")}
-      />
-      {errors.firstName && (
-        <p className="text-red-500 text-sm">{errors.firstName.message}</p>
-      )}
+		<div className='flex justify-between'>
+			<div className='din'>
+				<nav>
+					<a href='https://chatgpt.com/c/69170943-fe8c-8332-8d8b-5bc53f487466'>
+						https://chatgpt.com/c/69170943-fe8c-8332-8d8b-5bc53f487466
+					</a>
+				</nav>
+			</div>
+			<form
+				onSubmit={handleSubmit(onSubmit)}
+				className='flex flex-col gap-5 bg-gray-50 p-5 rounded-lg '
+			>
+				{/* Name */}
+				<label htmlFor='name' className='text-2xl font-normal'>
+					Ism
+				</label>
+				<input
+					id='name'
+					placeholder='Ismingizni kiriting'
+					className='p-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500'
+					{...register('firstName')}
+				/>
+				{errors.firstName && (
+					<p className='text-red-500 text-sm'>{errors.firstName.message}</p>
+				)}
 
-      {/* Phone */}
-      <label htmlFor="phone" className="text-2xl font-normal">
-        Telefon
-      </label>
-      <PhoneInput
-        id="phone"
-        placeholder="Telefon raqamingizni kiriting"
-        defaultCountry="UZ"
-        value={phoneValue}
-        onChange={(value) => setValue("phone", value || "")}
-        className="p-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-      />
-      {errors.phone && (
-        <p className="text-red-500 text-sm">{errors.phone.message}</p>
-      )}
+				{/* Phone */}
+				<label htmlFor='phone' className='text-2xl font-normal'>
+					Telefon
+				</label>
+				<PhoneInput
+					id='phone'
+					placeholder='Telefon raqamingizni kiriting'
+					defaultCountry='UZ'
+					value={phoneValue}
+					onChange={value => setValue('phone', value || '')}
+					className='p-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500'
+				/>
+				{errors.phone && (
+					<p className='text-red-500 text-sm'>{errors.phone.message}</p>
+				)}
 
-      {/* Message */}
-      <label htmlFor="message" className="text-2xl font-normal">
-        Xabar
-      </label>
-      <textarea
-        id="message"
-        placeholder="Xabaringizni kiriting"
-        className="p-4 border border-slate-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-slate-500"
-        rows={5}
-        {...register("message")}
-      ></textarea>
-      {errors.message && (
-        <p className="text-red-500 text-sm">{errors.message.message}</p>
-      )}
+				{/* Message */}
+				<label htmlFor='message' className='text-2xl font-normal'>
+					Xabar
+				</label>
+				<textarea
+					id='message'
+					placeholder='Xabaringizni kiriting'
+					className='p-4 border border-slate-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-slate-500'
+					rows={5}
+					{...register('message')}
+				></textarea>
+				{errors.message && (
+					<p className='text-red-500 text-sm'>{errors.message.message}</p>
+				)}
 
-      {/* Submit */}
-      <button
-        type="submit"
-        disabled={isSending}
-        className={`bg-slate-900 text-white py-4 rounded-lg hover:bg-slate-700 transition ${
-          isSending ? "opacity-60 cursor-not-allowed" : ""
-        }`}
-      >
-        {isSending ? "Yuborilmoqda..." : "Yuborish"}
-      </button>
-    </form>
-  );
+				{/* Submit */}
+				<button
+					type='submit'
+					disabled={isSending}
+					className={`bg-slate-900 text-white py-4 rounded-lg hover:bg-slate-700 transition ${
+						isSending ? 'opacity-60 cursor-not-allowed' : ''
+					}`}
+				>
+					{isSending ? 'Yuborilmoqda...' : 'Yuborish'}
+				</button>
+			</form>
+		</div>
+	)
 };
 
 export default ContactForm;

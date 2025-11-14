@@ -3,7 +3,7 @@ import { bannerLinks } from "../data";
 
 const Banner = () => {
   return (
-		<div className='flex justify-between items-center pt-[400px]'>
+		<div className='flex justify-between items-center py-[350px]'>
 			<div>
 					<h2 class='text-5xl font-bold mb-4 text-slate-50'>
 						Sayfuddinov Jasurbek Blog
