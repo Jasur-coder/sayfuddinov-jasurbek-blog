@@ -4,86 +4,93 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useState } from "react";
-import { contactLinks } from "../data";
+import github from '../assets/github.svg'
+import linkedin from '../assets/linkedin.svg'
+
 
 // ✅ Validation Schema
 const ContactSchema = z.object({
-  firstName: z
-    .string()
-    .min(3, "Ismingiz kamida 3 ta belgidan iborat bo‘lishi kerak.")
-    .max(30, "Ism 30 belgidan oshmasligi kerak."),
-  phone: z
-    .string()
-    .min(10, "Telefon raqam noto‘g‘ri.")
-    .max(20, "Telefon raqam juda uzun."),
-  message: z
-    .string()
-    .min(5, "Xabar kamida 5 ta belgidan iborat bo‘lishi kerak.")
-    .max(150, "Xabar 150 belgidan oshmasligi kerak."),
+	firstName: z
+		.string()
+		.min(3, "Ismingiz kamida 3 ta belgidan iborat bo‘lishi kerak.")
+		.max(30, "Ism 30 belgidan oshmasligi kerak."),
+	phone: z
+		.string()
+		.min(10, "Telefon raqam noto‘g‘ri.")
+		.max(20, "Telefon raqam juda uzun."),
+	message: z
+		.string()
+		.min(5, "Xabar kamida 5 ta belgidan iborat bo‘lishi kerak.")
+		.max(150, "Xabar 150 belgidan oshmasligi kerak."),
 });
 
 const ContactForm = () => {
-  const [isSending, setIsSending] = useState(false);
+	const [isSending, setIsSending] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(ContactSchema),
-  });
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		watch,
+		reset,
+		formState: { errors },
+	} = useForm({
+		resolver: zodResolver(ContactSchema),
+	});
 
-  const telegramApi = `https://api.telegram.org/bot${import.meta.env.VITE_BOT_TOKEN}/sendMessage`;
+	const telegramApi = `https://api.telegram.org/bot${import.meta.env.VITE_BOT_TOKEN}/sendMessage`;
 
-  const onSubmit = async (data) => {
-    setIsSending(true);
+	const onSubmit = async (data) => {
+		setIsSending(true);
 
-    const text = `
+		const text = `
 👤 *Ism:* ${data.firstName}
 📞 *Telefon:* ${data.phone}
 💬 *Xabar:* ${data.message}
 `;
 
-    try {
-      const response = await fetch(telegramApi, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: import.meta.env.VITE_CHAT_ID,
-          text,
-          parse_mode: "Markdown",
-        }),
-      });
+		try {
+			const response = await fetch(telegramApi, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					chat_id: import.meta.env.VITE_CHAT_ID,
+					text,
+					parse_mode: "Markdown",
+				}),
+			});
 
-      if (!response.ok) throw new Error("Telegram API error");
+			if (!response.ok) throw new Error("Telegram API error");
 
-      alert("✅ Xabaringiz muvaffaqiyatli yuborildi!");
-      reset();
-    } catch (error) {
-      console.error(error);
-      alert("❌ Xabar yuborishda xatolik yuz berdi. Qayta urinib ko‘ring.");
-    } finally {
-      setIsSending(false);
-    }
-  };
+			alert("✅ Xabaringiz muvaffaqiyatli yuborildi!");
+			reset();
+		} catch (error) {
+			console.error(error);
+			alert("❌ Xabar yuborishda xatolik yuz berdi. Qayta urinib ko‘ring.");
+		} finally {
+			setIsSending(false);
+		}
+	};
 
-  const phoneValue = watch("phone");
+	const phoneValue = watch("phone");
 
-  return (
+	return (
 		<div className='flex flex-col gap-7'>
-			<div className='flex justify-between px-3 py-3  items-center'>
-				{contactLinks.map(el => (
-					<nav key={el.id} className='flex items-center gap-3'>
-						<img src={el.img} alt={el.title} width={30} height={30} />
-						<h2 className='text-blue-500 text-2xl'>{el.title}</h2>
-						<a href={el.to} className='text-gray-200'>
-							{el.text}
-						</a>
-					</nav>
-				))}
+			<div className='flex  justify-between   items-center'>
+				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg">
+					<div className="flex items-center gap-2 mb-1.5">
+						<img src={github} alt="github" width={30} height={30} />
+						<h2 className="text-blue-500 text-2xl">Github</h2>
+					</div>
+					<a href="https://github.com/Jasur-coder" className="text-gray-100">https://github.com/Jasur-coder</a>
+				</div>
+				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg">
+					<div className="flex items-center gap-2 mb-1.5">
+						<img src={linkedin} alt="linkedin" width={30} height={30}/>
+						<h2 className="text-blue-500 text-2xl">Linkedin</h2>
+					</div>
+					<a href="https://www.linkedin.com/in/jasurbek-sayfuddinov" className="text-gray-100">www.linkedin.com/in/jasurbek-sayfuddinov</a>
+				</div>
 			</div>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
@@ -138,9 +145,8 @@ const ContactForm = () => {
 				<button
 					type='submit'
 					disabled={isSending}
-					className={`bg-slate-900 text-white py-4 rounded-lg hover:bg-slate-700 transition ${
-						isSending ? 'opacity-60 cursor-not-allowed' : ''
-					}`}
+					className={`bg-slate-900 text-white py-4 rounded-lg hover:bg-slate-700 transition ${isSending ? 'opacity-60 cursor-not-allowed' : ''
+						}`}
 				>
 					{isSending ? 'Yuborilmoqda...' : 'Yuborish'}
 				</button>
