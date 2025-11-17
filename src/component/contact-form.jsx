@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useState } from "react";
+import { contactLinks } from "../data";
 
 // ✅ Validation Schema
 const ContactSchema = z.object({
@@ -72,13 +73,17 @@ const ContactForm = () => {
   const phoneValue = watch("phone");
 
   return (
-		<div className='flex justify-between'>
-			<div className='din'>
-				<nav>
-					<a href='https://chatgpt.com/c/69170943-fe8c-8332-8d8b-5bc53f487466'>
-						https://chatgpt.com/c/69170943-fe8c-8332-8d8b-5bc53f487466
-					</a>
-				</nav>
+		<div className='flex flex-col gap-7'>
+			<div className='flex justify-between px-3 py-3  items-center'>
+				{contactLinks.map(el => (
+					<nav key={el.id} className='flex items-center gap-3'>
+						<img src={el.img} alt={el.title} width={30} height={30} />
+						<h2 className='text-blue-500 text-2xl'>{el.title}</h2>
+						<a href={el.to} className='text-gray-200'>
+							{el.text}
+						</a>
+					</nav>
+				))}
 			</div>
 			<form
 				onSubmit={handleSubmit(onSubmit)}

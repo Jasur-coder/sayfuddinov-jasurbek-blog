@@ -21,21 +21,21 @@ export const headerLinks = [
 ];
 
 export const bannerLinks = [
-  {
-    id: 0,
-    icon: github,
-    to: "https://github.com/Jasur-coder"
-  },
-  {
-    id: 1,
-    icon: linkedin,
-    to: "www.linkedin.com/in/jasurbek-sayfuddinov"
-  },
-  {
-    id: 2,
-    icon: telegram,
-    to: "https://t.me/+998934692330"
-  },
+	{
+		id: 0,
+		icon: github,
+		to: 'https://github.com/Jasur-coder',
+	},
+	{
+		id: 1,
+		icon: linkedin,
+		to: 'https://www.linkedin.com/in/jasurbek-sayfuddinov',
+	},
+	{
+		id: 2,
+		icon: telegram,
+		to: 'https://t.me/+998934692330',
+	},
 ]
 
 
@@ -83,3 +83,20 @@ export const projectData = [
       image: 'https://www.shutterstock.com/image-vector/horizontal-modern-cv-resume-template-600w-325539803.jpg'
     },
   ];
+
+export const contactLinks = [
+	{
+		id: 0,
+		title: 'Github :',
+    img: github,
+		text: 'https://github.com/Jasur-coder',
+		to: 'https://github.com/Jasur-coder',
+	},
+	{
+		id: 1,
+		title: 'Linkedin :',
+    img: linkedin,
+		text: 'www.linkedin.com/in/jasurbek-sayfuddinov',
+		to: 'https://www.linkedin.com/in/jasurbek-sayfuddinov',
+	},
+]
