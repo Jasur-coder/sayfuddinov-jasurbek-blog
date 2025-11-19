@@ -76,8 +76,8 @@ const ContactForm = () => {
 
 	return (
 		<div className='flex flex-col gap-7'>
-			<div className='flex  justify-between   items-center'>
-				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg">
+			<div className='flex  justify-end gap-7  items-center'>
+				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg ">
 					<div className="flex items-center gap-2 mb-1.5">
 						<img src={github} alt="github" width={30} height={30} />
 						<h2 className="text-blue-500 text-2xl">Github</h2>
