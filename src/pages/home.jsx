@@ -2,7 +2,7 @@ import { Banner } from "../component";
 
 const Home = () => {
   return (
-    <section className="bg-gray-900 h-[90.5vh]">
+    <section className="bg-gray-900 h-full w-full">
       <div className="container">
         <Banner/>
       </div>

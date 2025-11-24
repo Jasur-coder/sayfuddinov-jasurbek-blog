@@ -75,23 +75,7 @@ const ContactForm = () => {
 	const phoneValue = watch("phone");
 
 	return (
-		<div className='flex flex-col gap-7'>
-			<div className='flex  justify-end gap-7  items-center'>
-				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg ">
-					<div className="flex items-center gap-2 mb-1.5">
-						<img src={github} alt="github" width={30} height={30} />
-						<h2 className="text-blue-500 text-2xl">Github</h2>
-					</div>
-					<a href="https://github.com/Jasur-coder" className="text-gray-100">https://github.com/Jasur-coder</a>
-				</div>
-				<div className="px-3 py-3 ring-2 ring-blue-600 shadow-lg rounded-lg">
-					<div className="flex items-center gap-2 mb-1.5">
-						<img src={linkedin} alt="linkedin" width={30} height={30}/>
-						<h2 className="text-blue-500 text-2xl">Linkedin</h2>
-					</div>
-					<a href="https://www.linkedin.com/in/jasurbek-sayfuddinov" className="text-gray-100">www.linkedin.com/in/jasurbek-sayfuddinov</a>
-				</div>
-			</div>
+		<div className='flex flex-col gap-7 pb-4'>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='flex flex-col gap-5 bg-gray-50 p-5 rounded-lg '

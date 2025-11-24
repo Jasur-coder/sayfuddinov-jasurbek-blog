@@ -3,12 +3,12 @@ import { bannerLinks } from "../data";
 
 const Banner = () => {
   return (
-		<div className='flex justify-between items-center py-[350px]'>
+		<div className='flex justify-between items-center pt-[350px]  max-2xl:pt-[250px] pb-12'>
 			<div>
-					<h2 class='text-5xl font-bold mb-4 text-slate-50'>
-						Sayfuddinov Jasurbek Blogs
-					</h2>
-					<p class='text-slate-400 mb-7 text-4xl'>Software Engineer</p>
+				<h2 class='text-5xl font-bold mb-4 text-slate-50'>
+					Sayfuddinov Jasurbek Blogs
+				</h2>
+				<p class='text-slate-400 mb-7 text-4xl'>Software Engineer</p>
 
 				<div className='flex justify-start space-x-4'>
 					{bannerLinks.map(el => (
